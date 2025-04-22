@@ -22,7 +22,7 @@ class RemoveCardNumberAndExpiredAndCvvAndIsPaidInCheckoutsTable extends Migratio
     public function down(): void
     {
         Schema::table('checkouts', function (Blueprint $table) {
-            $table->string('card_number')->nullable();
+            $table->string('card_number', 20)->nullable();
             $table->string('expired')->nullable();
             $table->string('cvv')->nullable();
             $table->boolean('is_paid')->default(false);
